@@ -52,4 +52,17 @@ Here is a pre-start checklist:
 
 ## Implementation
 
-** ADD YOUR IMPLEMENTATION DOCUMENTATION HERE **
+### Phase 2 - Docker
+
+#### How to build and run
+
+```bash
+docker build -t hivebox:v0.0.1 .
+docker run --rm hivebox:v0.0.1
+```
+
+#### Expected output
+
+```
+HiveBox version: v0.0.1
+```
