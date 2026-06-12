@@ -66,3 +66,41 @@ docker run --rm hivebox:v0.0.1
 ```
 HiveBox version: v0.0.1
 ```
+
+### Phase 3 - API
+
+The app is now a Flask API exposing the following endpoints:
+
+- `GET /version` - returns the current app version.
+- `GET /temperature` - returns the average temperature (last hour) across 3 senseBox sensors from [openSenseMap](https://opensensemap.org/).
+
+#### How to build and run
+
+```bash
+docker build -t hivebox:v0.0.1 .
+docker run --rm -p 5000:5000 hivebox:v0.0.1
+```
+
+#### Example requests
+
+```bash
+curl http://localhost:5000/version
+curl http://localhost:5000/temperature
+```
+
+#### Running locally (without Docker)
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app/main.py
+```
+
+#### Running tests
+
+```bash
+pip install -r requirements.txt
+cd app
+pytest
+```

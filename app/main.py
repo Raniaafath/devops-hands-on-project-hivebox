@@ -14,10 +14,12 @@ SENSEBOX_IDS = [
 
 @app.route("/version")
 def version():
+    """Return the current application version as JSON."""
     return jsonify({"version": APP_VERSION})
 
 @app.route("/temperature")
 def temperature():
+    """Fetch recent temperature readings and return the average."""
     temperatures = []
 
     for box_id in SENSEBOX_IDS:
