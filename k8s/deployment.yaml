@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: hivebox
-          image: hivebox:latest
-          imagePullPolicy: Never
+          image: ghcr.io/raniaafath/devops-hands-on-project-hivebox:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           envFrom:
